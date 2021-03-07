@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorises",
+  "info": {
+    "name": "categorise"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "descriptions": {
+      "type": "richtext",
+      "required": true
+    },
+    "posts": {
+      "collection": "posts",
+      "via": "categorises",
+      "dominant": true
+    }
+  }
+}

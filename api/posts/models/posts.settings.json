@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "posts"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "descriptions": {
+      "type": "richtext",
+      "required": true
+    },
+    "linkes": {
+      "type": "string"
+    },
+    "feature_image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "banner_image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "seo_eta_title": {
+      "type": "string"
+    },
+    "seo_description": {
+      "type": "string"
+    },
+    "meta_robots": {
+      "type": "string"
+    },
+    "canonical_url": {
+      "type": "string"
+    },
+    "schema_option": {
+      "type": "string"
+    },
+    "tags": {
+      "via": "posts",
+      "collection": "tags"
+    },
+    "categorises": {
+      "via": "posts",
+      "collection": "categorise"
+    },
+    "slider": {
+      "via": "posts",
+      "model": "sliders"
+    }
+  }
+}
