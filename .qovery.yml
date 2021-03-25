@@ -1,0 +1,15 @@
+---
+application:
+  name: "powercontinuity"
+  project: "PowC"
+  organization: "QoveryCommunity"
+databases:
+- type: "MYSQL"
+  name: "powc"
+  version: "8.0"
+routers:
+- name: "main-powercontinuity"
+  routes:
+  - application_name: "powercontinuity"
+    paths:
+    - "/*"
